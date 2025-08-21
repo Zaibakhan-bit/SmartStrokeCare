@@ -37,7 +37,6 @@ if USE_ARDUINO:
         USE_ARDUINO=False; ser=None
 
 # ---- vitals model ----
-import joblib, tensorflow as tf
 vitals_model = tf.keras.models.load_model("stroke_cnn_model.h5")
 scaler = joblib.load("scaler.pkl")
 
@@ -110,3 +109,4 @@ with tab2:
             if ser: ser.write(b'N')
 
 st.caption("Demo only – not a medical device.")
+
